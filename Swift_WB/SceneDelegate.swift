@@ -12,12 +12,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
+    var defaultViewController : UIViewController? {
+        let isLogin = UserAccountViewModel.shareInstance.isLogin
+        return isLogin ? WelComeViewController() : UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController() 
+        
+    }
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        
+
+//        UIWindowScene *ws = (UIWindowScene *)scene;
+//        self.window = [[UIWindow alloc] initWithWindowScene:ws];
+//        self.window.frame = ws.coordinateSpace.bounds;
+//        self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[OneViewController alloc] init]];
+//        [self.window makeKeyAndVisible];
+        
+        
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        // 设置导航栏和工具栏的外观
+        // 因为外观一旦设置全局有效，所以应该在程序一进来就设置
+        UINavigationBar.appearance().tintColor = UIColor.orange
+        UITabBar.appearance().tintColor = UIColor.orange
+        
+        self.window = UIWindow(windowScene: scene as! UIWindowScene)
+        self.window?.frame = (scene as! UIWindowScene).coordinateSpace.bounds
+        self.window?.backgroundColor = UIColor.green
+        self.window?.rootViewController = defaultViewController
+        self.window?.makeKeyAndVisible()
+        
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

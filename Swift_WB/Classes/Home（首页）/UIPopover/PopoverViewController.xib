@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopoverViewController" customModule="Swift_WB" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="3wp-Ee-WDk" id="yfb-jJ-kgL"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="3wp-Ee-WDk">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="popover_background" translatesAutoresizingMaskIntoConstraints="NO" id="icP-vl-cu5">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </imageView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="saj-MW-E8U">
+                    <rect key="frame" x="20" y="64" width="374" height="778"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="icP-vl-cu5" firstAttribute="top" secondItem="98S-4f-tGm" secondAttribute="top" id="GxX-qf-YuJ"/>
+                <constraint firstItem="98S-4f-tGm" firstAttribute="bottom" secondItem="saj-MW-E8U" secondAttribute="bottom" constant="20" id="UEv-q3-7IK"/>
+                <constraint firstItem="saj-MW-E8U" firstAttribute="leading" secondItem="98S-4f-tGm" secondAttribute="leading" constant="20" id="WCm-zj-8v0"/>
+                <constraint firstItem="98S-4f-tGm" firstAttribute="trailing" secondItem="icP-vl-cu5" secondAttribute="trailing" id="kAD-Y7-7cG"/>
+                <constraint firstItem="icP-vl-cu5" firstAttribute="leading" secondItem="98S-4f-tGm" secondAttribute="leading" id="s1U-Dp-qwk"/>
+                <constraint firstItem="98S-4f-tGm" firstAttribute="bottom" secondItem="icP-vl-cu5" secondAttribute="bottom" id="uTB-wa-jU6"/>
+                <constraint firstItem="98S-4f-tGm" firstAttribute="trailing" secondItem="saj-MW-E8U" secondAttribute="trailing" constant="20" id="wc7-mA-Kyl"/>
+                <constraint firstItem="saj-MW-E8U" firstAttribute="top" secondItem="98S-4f-tGm" secondAttribute="top" constant="20" id="z3c-pm-9vU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="98S-4f-tGm"/>
+            <point key="canvasLocation" x="191" y="373"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="popover_background" width="217" height="49"/>
+    </resources>
+</document>
