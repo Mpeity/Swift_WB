@@ -14,7 +14,10 @@ class HomeViewController: BaseViewController {
     private lazy var titleBtn: TitleButton = TitleButton()
     
     
-    private lazy var statusesArr : [StatusModel] = [StatusModel]()
+//    private lazy var statusesArr : [StatusModel] = [StatusModel]()
+    // 换成viewModel
+    private lazy var statusesArr : [StatusViewModel] = [StatusViewModel]()
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +53,8 @@ extension HomeViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCellId")!
-        let status = statusesArr[indexPath.row]
-        cell.textLabel?.text = status.text
+        let statusViewModel = statusesArr[indexPath.row]
+        cell.textLabel?.text = statusViewModel.statusModel?.text
         return cell
         
     }
@@ -127,7 +130,9 @@ extension HomeViewController {
             // 遍历数据
             for dic in resultArr {
                 let status = StatusModel(dic: dic)
-                self.statusesArr.append(status)
+                // 转成viewmodel
+                let viewModel = StatusViewModel(statusModel: status)
+                self.statusesArr.append(viewModel)
             }
             
             
